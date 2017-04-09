@@ -14,7 +14,7 @@ module.exports = {
   findUsers: (req, res)=> {
     User
       .find({})
-      .populate('skills.skill')
+      .populate('skills.skill', 'name')
       .exec((err,users)=> {
       if(err) res.send(err)
       res.send(users)
